@@ -8,18 +8,6 @@ import {createRouter, createWebHistory} from 'vue-router'
 // #region routes
 // 静态路由
 const staticRoutes = [
-  {
-    path: '/Login',
-    name: 'Login',
-    component: () => import('@/views/Login/No-Found.vue'),
-    meta: {title: '登录', icon: '', hidden: true}
-  },
-  {
-    path: '/404',
-    name: '404',
-    component: () => import('@/views/Login/Login.vue'),
-    meta: {title: '404', hidden: true}
-  }
 ]
 
 // 动态路由
