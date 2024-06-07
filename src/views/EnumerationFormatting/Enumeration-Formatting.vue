@@ -4,26 +4,48 @@
  * @Time: 2024/6/6 17:17
 -->
 <template>
-  <section class="enumeration-formatting">
-    Enumeration-Formatting
-    <router-link to="/">
-      Go to home
-    </router-link>
-  </section>
+  <main class="proxy init-background-style">
+    <header class="content-header">
+      {{ title }}
+    </header>
+    <section class="content">
+      <article class="content-body">
+        身体
+      </article>
+      <footer class="content-footer">
+        代码
+      </footer>
+    </section>
+  </main>
 </template>
 
 <script setup>
-// import {reactive, toRefs} from 'vue'
+import {onMounted, reactive, toRefs} from 'vue'
+import {useRoute} from 'vue-router'
 
-// const state = reactive( {} )
+const route = useRoute()
+const state = reactive( {
+  title: ''
+} )
 
-// const {} = toRefs( state )
+
+// region title
+const setComponentTitle = () => {
+  const {meta} = route
+  state.title = meta.title
+}
+
+onMounted(() => {
+  setComponentTitle()
+})
+// endregion title
+
+
+const {title} = toRefs( state )
 </script>
 
-<style scoped>
-.enumeration-formatting{
-  width: 100vw;
-  height: 100vh;
-  background-color: #57b741;
+<style scoped lang="less">
+.proxy {
+
 }
 </style>

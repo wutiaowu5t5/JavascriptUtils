@@ -13,13 +13,12 @@ import store from './store/store'
 app.use(store)
 
 // 引入Router
-import router from './router/router'
+import {router} from './router/router'
 app.use(router)
 
 // 引入log美化
 import consoleOverridePlugin from './utils/customConsole/consolePlugin'
 app.use(consoleOverridePlugin)
-
 
 
 app.mount('#app')

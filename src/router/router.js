@@ -8,16 +8,16 @@ import {createRouter, createWebHistory} from 'vue-router'
 // #region routes
 // 静态路由
 const staticRoutes = [
-]
-
-// 动态路由
-const dynamicRoutes = [
   {
     path: '/',
     name: 'Home',
     component: () => import('@/views/Home/Home.vue'),
     meta: {title: 'Home', hidden: false}
-  },
+  }
+]
+
+// 动态路由
+const dynamicRoutes = [
   {
     path: '/proxy',
     name: 'Proxy',
@@ -28,25 +28,23 @@ const dynamicRoutes = [
     path: '/color-conversion',
     name: 'ColorConversion',
     component: () => import('@/views/ColorConversion/Color-Conversion.vue'),
-    meta: {title: 'ColorConversion', hidden: false}
+    meta: {title: '颜色转换', hidden: false}
   },
   {
     path: '/enumeration-formatting',
     name: 'EnumerationFormatting',
     component: () => import('@/views/EnumerationFormatting/Enumeration-Formatting.vue'),
-    meta: {title: 'EnumerationFormatting', hidden: false}
+    meta: {title: '枚举值格式化', hidden: false}
   }
   
   
 ]
 // #endregion
 
-export {staticRoutes, dynamicRoutes} // 暴露路由
 
 // 创建路由实例
 const router = createRouter({
   history: createWebHistory(), // 创建HTML5模式
   routes: [...staticRoutes, ...dynamicRoutes] // routes
 })
-
-export default router
+export {staticRoutes, dynamicRoutes, router} // 暴露路由

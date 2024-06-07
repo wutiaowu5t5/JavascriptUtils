@@ -46,15 +46,6 @@ const {title} = toRefs( state )
 
 <style scoped lang="less">
 .proxy {
-  background-color: #e0e0e0;
-  
-  .content {
-    width: 40%;
-    height: 100%;
-    background-color: #ffffff;
-    margin: 40px 0;
-    border-radius: 15px;
-  }
-  
+
 }
 </style>

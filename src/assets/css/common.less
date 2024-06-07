@@ -2,9 +2,11 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
   overflow-y: auto;
+  background-color: #e0e0e0;
+  font-family: 'sanctum';
 
   /* 滚动条 */
   &::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
@@ -33,4 +35,38 @@
     background-color: #9f9f9f;
     -webkit-border-radius: 4px;
   }
+
+  .content-header {
+    width: 40%;
+    min-height: 15%;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    width: 40%;
+    height: 100%;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    padding: 0 20px;
+
+    .content-body {
+      background-color: #ea0e0e;
+    }
+
+    .content-footer {
+      background-color: #354f75;
+    }
+
+  }
+
+}
+
+@font-face{
+  font-family: 'sanctum' ;  /* 字体名自定义即可 */
+  src: url('../fonts/book.ttf');
+  font-display: swap;
 }
