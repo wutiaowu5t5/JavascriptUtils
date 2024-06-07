@@ -20,5 +20,13 @@ app.use(router)
 import consoleOverridePlugin from './utils/customConsole/consolePlugin'
 app.use(consoleOverridePlugin)
 
+// 引入highlight
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
+hljs.registerLanguage('javascript', javascript)
+import 'highlight.js/styles/atom-one-dark.css'
+import HLJsVuePlugin from '@highlightjs/vue-plugin'
+app.use(HLJsVuePlugin)
+
 
 app.mount('#app')

@@ -10,7 +10,8 @@
     </header>
     <section class="content">
       <article class="content-body">
-        身体
+        <h1>示例</h1>
+        阿达
       </article>
       <footer class="content-footer">
         代码

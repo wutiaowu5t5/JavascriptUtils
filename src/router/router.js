@@ -11,7 +11,7 @@ const staticRoutes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/views/Home/Home.vue'),
+    component: () => import('@/views/Home.vue'),
     meta: {title: 'Home', hidden: false}
   }
 ]
@@ -22,7 +22,7 @@ const dynamicRoutes = [
     path: '/proxy',
     name: 'Proxy',
     component: () => import('@/views/Proxy/Proxy.vue'),
-    meta: {title: 'Proxy 代理对象', hidden: false}
+    meta: {title: 'Proxy 代理对象', filename: 'ProxyObject', hidden: false}
   },
   {
     path: '/color-conversion',
