@@ -11,8 +11,12 @@
     <section class="content">
       <article class="content-body">
         <p>代码</p>
-        <section ref="hljsDom" class="hljs-container" codetype="JavaScript">
+        <section ref="hljsDom" :class="{ 'collapsed': isCollapsed }" class="hljs-container" codetype="JavaScript">
           <highlightjs language="JavaScript" :autodetect="false" :code="code" />
+          <div v-if="isCollapsible" class="collapse-btn" @click="toggleCollapse()">
+            <icon-ep-ArrowDownBold v-if="isCollapsed" class="floating-icon" />
+            <icon-ep-ArrowUpBold v-else class="floating-icon" />
+          </div>
         </section>
       </article>
       <footer class="content-footer">
@@ -41,11 +45,15 @@ const props = defineProps( {
 const state = reactive({
   title: '',
   code: '',
-  scriptName: ''
+  scriptName: '',
+  isCollapsed: true,
+  isCollapsible: false,
+  maxHeight: 300
+  
 })
 
 // region message
-const setComponentTitle = () => {
+const setComponentMessage = () => {
   const {meta} = route
   state.title = meta.title
   state.scriptName = meta.filename
@@ -118,15 +126,28 @@ const formattingRenderDom = (el) => {
   })
 }
 
+const checkHeight = (el) => {
+  if (el) {
+    console.log( el.scrollHeight, 'el.scrollHeight' )
+    state.isCollapsible = el.scrollHeight > state.maxHeight
+  }
+}
+
+// 切换折叠状态的方法
+const toggleCollapse = () => {
+  state.isCollapsed = !state.isCollapsed
+}
+
 onMounted(async () => {
-  setComponentTitle()
+  setComponentMessage()
   setTimeout(() => {
     formattingRenderDom(hljsDom.value)
+    checkHeight(hljsDom.value)
   }, 400)
 })
 // endregion message
 
-const {title, code} = toRefs( state )
+const {title, code, isCollapsed, isCollapsible} = toRefs( state )
 const {mainClass} = toRefs( props )
 </script>
 
@@ -197,7 +218,32 @@ const {mainClass} = toRefs( props )
     }
     
     .content-body {
-    
+      
+      .hljs-container {
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        
+        .collapse-btn {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(180deg, rgba(23,23,23,0.1), rgba(23,23,23,0.9));
+          
+          .floating-icon {
+            cursor: pointer;
+            animation: float 1.8s infinite ease-in-out;
+          }
+        }
+      }
+      
+      .hljs-container.collapsed {
+        max-height: 300px; /* 设置折叠后的最大高度 */
+      }
     }
     
     .content-footer {
@@ -206,5 +252,17 @@ const {mainClass} = toRefs( props )
     
   }
   
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 </style>
