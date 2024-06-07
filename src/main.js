@@ -20,4 +20,6 @@ app.use(router)
 import consoleOverridePlugin from './utils/customConsole/consolePlugin'
 app.use(consoleOverridePlugin)
 
+
+
 app.mount('#app')

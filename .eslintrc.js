@@ -44,7 +44,8 @@ module.exports = {
       {
         'ignores': [
           'Home',
-          'Login'
+          'Login',
+          'Proxy'
         ]
       }
     ],

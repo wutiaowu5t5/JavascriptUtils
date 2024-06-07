@@ -17,7 +17,27 @@ const dynamicRoutes = [
     name: 'Home',
     component: () => import('@/views/Home/Home.vue'),
     meta: {title: 'Home', hidden: false}
+  },
+  {
+    path: '/proxy',
+    name: 'Proxy',
+    component: () => import('@/views/Proxy/Proxy.vue'),
+    meta: {title: 'Proxy 代理对象', hidden: false}
+  },
+  {
+    path: '/color-conversion',
+    name: 'ColorConversion',
+    component: () => import('@/views/ColorConversion/Color-Conversion.vue'),
+    meta: {title: 'ColorConversion', hidden: false}
+  },
+  {
+    path: '/enumeration-formatting',
+    name: 'EnumerationFormatting',
+    component: () => import('@/views/EnumerationFormatting/Enumeration-Formatting.vue'),
+    meta: {title: 'EnumerationFormatting', hidden: false}
   }
+  
+  
 ]
 // #endregion
 

@@ -13,6 +13,9 @@
       Danger
     </el-button>
     <span>lang lang yu wo~~~</span>
+    <router-link to="/proxy">
+      Go to Proxy
+    </router-link>
     <span>mut ziu dim yan zaau bed dou nei</span>
     <span>mut ziu dim yan zaau bed dou nei</span>
   </div>
@@ -37,9 +40,10 @@ console.table([
 
 <style scoped lang="less">
 .hello {
-  margin-top: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #38b7fc;
   color: black;
-  width: 100%;
   text-align: center;
   font-size: 40px;
   
