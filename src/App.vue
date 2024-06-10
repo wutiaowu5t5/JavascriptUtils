@@ -15,16 +15,16 @@
 </template>
 
 <script setup>
-import {watch, ref} from 'vue'
+import {watch, ref, onMounted} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
 
 const route = useRoute()
 let showBackButtonRef = ref(false)
 
 const router = useRouter()
-// onMounted(() => {
-//  router.push('/JavascriptUtils')
-// })
+onMounted(() => {
+  router.push('/JavascriptUtils')
+})
 const backHome = () => {
   router.push('/')
 }

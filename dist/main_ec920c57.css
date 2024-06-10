@@ -92,24 +92,24 @@ body {
   background-color: #e0e0e0;
 }
 
-.scale-slide-enter-active[data-v-18fe8e88],
-.scale-slide-leave-active[data-v-18fe8e88] {
+.scale-slide-enter-active[data-v-46b7dc5a],
+.scale-slide-leave-active[data-v-46b7dc5a] {
   position: absolute;
   transition: all 0.85s ease;
 }
-.scale-slide-enter-from[data-v-18fe8e88] {
+.scale-slide-enter-from[data-v-46b7dc5a] {
   left: -100%;
 }
-.scale-slide-enter-to[data-v-18fe8e88] {
+.scale-slide-enter-to[data-v-46b7dc5a] {
   left: 0;
 }
-.scale-slide-leave-from[data-v-18fe8e88] {
+.scale-slide-leave-from[data-v-46b7dc5a] {
   transform: scale(1);
 }
-.scale-slide-leave-to[data-v-18fe8e88] {
+.scale-slide-leave-to[data-v-46b7dc5a] {
   transform: scale(0.8);
 }
-.back[data-v-18fe8e88] {
+.back[data-v-46b7dc5a] {
   text-decoration: none;
   position: fixed;
   top: 20px;
@@ -126,11 +126,11 @@ body {
   border-radius: 30px;
   z-index: 1;
 }
-.back[data-v-18fe8e88]:hover {
-  animation: ani-18fe8e88 8s linear infinite;
+.back[data-v-46b7dc5a]:hover {
+  animation: ani-46b7dc5a 8s linear infinite;
   border: none;
 }
-.back[data-v-18fe8e88]:before {
+.back[data-v-46b7dc5a]:before {
   content: "";
   position: absolute;
   top: -5px;
@@ -143,13 +143,13 @@ body {
   border-radius: 35px;
   transition: 1s;
 }
-.back[data-v-18fe8e88]:hover::before {
+.back[data-v-46b7dc5a]:hover::before {
   filter: blur(20px);
 }
-.back[data-v-18fe8e88]:active {
+.back[data-v-46b7dc5a]:active {
   background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 }
-@keyframes ani-18fe8e88 {
+@keyframes ani-46b7dc5a {
 0% {
     background-position: 0%;
 }

@@ -9,7 +9,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 // 静态路由
 const staticRoutes = [
   {
-    path: '/',
+    path: '/JavascriptUtils',
     name: 'Home',
     component: () => import('@/views/Home.vue'),
     meta: {title: 'Home', hidden: false}
