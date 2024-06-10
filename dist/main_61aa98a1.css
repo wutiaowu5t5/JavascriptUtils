@@ -85,7 +85,7 @@ pre {
 @font-face {
   font-family: 'sanctum';
   /* 字体名自定义即可 */
-  src: url(/static/fonts/4435e51c.ttf);
+  src: url(./static/fonts/4435e51c.ttf);
   font-display: swap;
 }
 body {
