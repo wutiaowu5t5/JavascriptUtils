@@ -4,16 +4,16 @@
  * @Time: 2024/6/10 13:49
 -->
 <template>
-  <article class="alert" :class="className">
+  <article class="alert" :class="typeSource[type].className">
     <div>
       <el-tooltip
         effect="dark"
-        :content="tooltip"
+        :content="typeSource[type].tooltip"
         placement="top"
       >
         <span class="icon">i</span>
       </el-tooltip>
-      <span>{{ title }}</span>
+      <span>{{ typeSource[type].title }}</span>
     </div>
     <figcaption>
       <slot name="content" />
@@ -22,8 +22,7 @@
 </template>
 
 <script setup>
-import {onMounted, toRefs, reactive} from 'vue'
-
+import {toRefs} from 'vue'
 const props = defineProps({
   type: {
     type: String,
@@ -59,20 +58,7 @@ const typeSource = {
   }
 }
 
-const state = reactive({
-  className: '',
-  tooltip: '',
-  title: ''
-})
-
-onMounted(() => {
-  const {className, tooltip, title} = typeSource[props.type]
-  state.className = className
-  state.tooltip = tooltip
-  state.title = title
-})
-
-const {className, tooltip, title} = toRefs(props)
+const {type} = toRefs(props)
 </script>
 
 <style scoped lang="less">

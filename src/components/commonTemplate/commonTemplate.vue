@@ -12,6 +12,7 @@
       <article class="content-body">
         <p>代码</p>
         <code-template :code="code" />
+        <slot name="alert" />
       </article>
       <footer class="content-footer">
         <p>示例</p>
@@ -34,12 +35,15 @@ const props = defineProps( {
   mainClass: {
     type: String,
     default: ''
+  },
+  code: {
+    type: String,
+    default: ''
   }
 } )
 
 const state = reactive({
   title: '',
-  code: '',
   scriptName: '',
   isCollapsed: true,
   isCollapsible: false,
@@ -50,20 +54,6 @@ const state = reactive({
 const setComponentMessage = () => {
   const {meta} = route
   state.title = meta.title
-  state.scriptName = meta.filename
-  fetch(`./${state.scriptName}.js`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-      return response.text()
-    })
-    .then(data => {
-      state.code = data
-    })
-    .catch(error => {
-      console.error('Error loading JavaScript file:', error)
-    })
 }
 
 onMounted(async () => {
@@ -71,8 +61,8 @@ onMounted(async () => {
 })
 // endregion message
 
-const {title, code} = toRefs( state )
-const {mainClass} = toRefs( props )
+const {title} = toRefs( state )
+const {mainClass, code} = toRefs( props )
 </script>
 
 <style lang="less" scoped>
@@ -84,7 +74,7 @@ const {mainClass} = toRefs( props )
   align-items: center;
   overflow-y: auto;
   color: white;
-  background-color: #131818;
+  background-color: black;
   font-family: 'sanctum';
   
   /* 滚动条 */
@@ -126,7 +116,7 @@ const {mainClass} = toRefs( props )
   
   .content {
     width: 40%;
-    height: 100%;
+    flex-grow: 1;
     background-color: #181b1a;
     margin-bottom: 40px;
     border-radius: 15px;
@@ -139,9 +129,7 @@ const {mainClass} = toRefs( props )
     
     .content-body {}
     
-    .content-footer {
-      height: 3000px;
-    }
+    .content-footer {}
     
   }
   

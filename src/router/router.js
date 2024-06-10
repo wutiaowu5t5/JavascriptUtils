@@ -22,7 +22,7 @@ const dynamicRoutes = [
     path: '/proxy',
     name: 'Proxy',
     component: () => import('@/views/Proxy/Proxy.vue'),
-    meta: {title: 'Proxy 代理对象', filename: 'ProxyObject', hidden: false}
+    meta: {title: 'Proxy 代理对象', filename: 'DeepProxy', hidden: false}
   },
   {
     path: '/color-conversion',
@@ -36,8 +36,6 @@ const dynamicRoutes = [
     component: () => import('@/views/EnumerationFormatting/Enumeration-Formatting.vue'),
     meta: {title: '枚举值格式化', hidden: false}
   }
-  
-  
 ]
 // #endregion
 
