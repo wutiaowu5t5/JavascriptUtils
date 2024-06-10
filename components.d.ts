@@ -11,6 +11,8 @@ declare module 'vue' {
     CodeTemplate: typeof import('./src/components/codeTemplate/codeTemplate.vue')['default']
     CommonTemplate: typeof import('./src/components/commonTemplate/commonTemplate.vue')['default']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    IconEpArrowDownBold: typeof import('~icons/ep/arrow-down-bold')['default']
+    IconEpArrowUpBold: typeof import('~icons/ep/arrow-up-bold')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
