@@ -22,6 +22,9 @@ const route = useRoute()
 let showBackButtonRef = ref(false)
 
 const router = useRouter()
+// onMounted(() => {
+//  router.push('/JavascriptUtils')
+// })
 const backHome = () => {
   router.push('/')
 }
@@ -29,7 +32,7 @@ const backHome = () => {
 watch(
   () => route.path,
   (newValue, oldValue) => {
-    showBackButtonRef.value = newValue !== '/'
+    showBackButtonRef.value = newValue !== '/JavascriptUtils'
   }
 )
 </script>
