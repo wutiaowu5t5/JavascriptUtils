@@ -38,7 +38,7 @@ watch(
 @import './assets/css/initStyle.less';
 @import './assets/css/common.less';
 body {
-  background-color: black;
+  background-color: #e0e0e0;
 }
 </style>
 

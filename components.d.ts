@@ -7,10 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AlertTemplate: typeof import('./src/components/alertTemplate/alertTemplate.vue')['default']
+    CodeTemplate: typeof import('./src/components/codeTemplate/codeTemplate.vue')['default']
     CommonTemplate: typeof import('./src/components/commonTemplate/commonTemplate.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    IconEpAim: typeof import('~icons/ep/aim')['default']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
     IconEpArrowDownBold: typeof import('~icons/ep/arrow-down-bold')['default']
     IconEpArrowUpBold: typeof import('~icons/ep/arrow-up-bold')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
